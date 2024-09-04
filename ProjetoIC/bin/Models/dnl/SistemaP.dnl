@@ -1,0 +1,57 @@
+add library
+<%
+	import java.lang.*;	
+%>!
+
+A Contador has a value!
+the range of Contador's value is Integer!
+
+use ContadorP with type Contador!
+
+accepts input on Contador with type Contador!
+generates output on Contador with type Contador!
+
+initialize variables
+<% ContadorP = new Contador(0); %>!
+
+to start hold in Enviar for time 0.0!
+from Enviar go to Esperar!
+after Enviar output Contador!
+hold in Esperar for time 0.0!
+from Esperar go to Receber!
+passivate in Receber!
+when in Receber and receive Contador go to Enviar!
+
+
+internal event for Esperar 
+<%
+	this.ContadorP.setValue(ContadorP.getValue() + 6);
+%>!
+
+internal event for Enviar
+<%
+	this.ContadorP.setValue(ContadorP.getValue() + 6);
+%>!
+
+internal event for Receber
+<%
+
+	Contador c = (Contador) messageList.get(0).getData();
+    ContadorP.setValue((Math.max(c.getValue(), this.ContadorP.getValue()) + 1));
+    this.ContadorP.setValue(ContadorP.getValue() + 6);
+             
+%>!
+
+
+output event for Enviar 
+<%
+	output.add(outContador, ContadorP);
+%>!
+
+
+
+
+
+
+
+

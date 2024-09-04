@@ -1,0 +1,4 @@
+From the top perspective, SistemaGeral is made of SistemaP, SistemaQ, and SistemaR!
+From the top perspective, SistemaP sends Contador to SistemaQ!
+From the top perspective, SistemaQ sends Contador to SistemaR!
+From the top perspective, SistemaR sends Contador to SistemaP!

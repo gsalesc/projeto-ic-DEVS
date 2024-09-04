@@ -1,0 +1,4 @@
+set name of model as SistemaGeral !
+pruned from SistemaGeral.ses !
+mergeAll from SistemaGeral.ses !
+write class files !
